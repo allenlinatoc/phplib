@@ -1,0 +1,30 @@
+{
+    "name": "allenlinatoc/phplib",
+    "description": "My personally used library containing config reader, file system stuff, etc. which, of course, comes with dependencies",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Allen Linatoc",
+            "email": "linatoc.allen@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Allenlinatoc\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Allenlinatoc\\Tests\\": [ "Tests" ]
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "symfony/var-dumper": "^5.0"
+    },
+    "require-dev": {
+        "nette/tester": "^2.3",
+        "symfony/var-dumper": "^5.0"
+    }
+}
