@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Allenlinatoc\Tests;
+namespace Allenlinatoc\CLI;
 
 
 class Console
