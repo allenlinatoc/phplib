@@ -6,8 +6,8 @@ namespace Allenlinatoc\Config;
 
 interface IConfigReader
 {
-    public function __construct($path, array $args = []);
+    public function __construct($path, array $args = null);
     public function getPath(): string;
-    public function load($path = null, array $args = []): void;
-    public function read(): object;
+    public function load($path = null, array $args = null): void;
+    public function read(): array;
 }
