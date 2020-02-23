@@ -20,12 +20,11 @@ class PHPConfigReader implements IConfigReader
 
     public function __construct($path, array $args = null)
     {
+        $this->args = [];
         $this->path = realpath($path);
-        $this->load($this->path);
-        if (is_object($args)) {
-            foreach ($args as $key => $value) {
-                $this->args[$key] = $value;
-            }
+        //$this->load($this->path);
+        if (is_array($args)) {
+            $this->args = $args;
         }
     }
     
@@ -37,12 +36,16 @@ class PHPConfigReader implements IConfigReader
      * 
      * @return mixed
      */
-    public function arg($name, $value = null): mixed
+    public function argument($name, $value = null)
     {
         if (!$value) {
             return $this->args[$name];
         }
         $this->args[$name] = $value;
+    }
+    
+    public function getArguments() {
+        return $this->args;
     }
 
     public function getPath(): string
@@ -55,9 +58,13 @@ class PHPConfigReader implements IConfigReader
         if (is_null($path)) {
             $path = $this->getPath();
         }
+        if (is_null($args)) {
+            $args = $this->getArguments();
+        }
         if ($path === false) {
             throw new FileNotFoundException($path);
         }
+        
         $data = (require $path);
         $this->data = $data($args);
     }
@@ -65,6 +72,10 @@ class PHPConfigReader implements IConfigReader
 
     public function read(): array
     {
+        if (is_null($this->data)) {
+            $this->load();
+            //throw new NotLoadedException("Need to invoke PHPConfigReader::load() first");
+        }
         return $this->getData();
     }
 

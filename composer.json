@@ -1,6 +1,6 @@
 {
     "name": "allenlinatoc/phplib",
-    "description": "My personally used library containing config reader, file system stuff, etc. which, of course, comes with dependencies",
+    "description": "My personally used library containing config reader, file system stuff, etc.",
     "type": "library",
     "license": "MIT",
     "authors": [
