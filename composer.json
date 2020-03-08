@@ -21,7 +21,9 @@
     },
     "require": {
         "php": "^7.1",
-        "symfony/var-dumper": "^5.0"
+        "symfony/var-dumper": "^5.0",
+        "illuminate/database": "^6.17",
+        "illuminate/events": "^6.17"
     },
     "require-dev": {
         "nette/tester": "^2.3",
