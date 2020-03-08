@@ -21,5 +21,6 @@ use Allenlinatoc\Str;
 Environment::setup();
 Console::title("Testing: allenlinatoc/phplib");
 
-require_once __TESTPADS . "/classes.php";
+require_once __TESTPADS . "/config.php";
 require_once __TESTPADS . "/utils.php";
+require_once __TESTPADS . "/db_fields_lara.php";
