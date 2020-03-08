@@ -3,3 +3,6 @@ vendor/
 output/
 nbproject/
 nbproject/*
+nbproject/project.properties
+nbproject/private/private.xml
+nbproject/private/private.properties
